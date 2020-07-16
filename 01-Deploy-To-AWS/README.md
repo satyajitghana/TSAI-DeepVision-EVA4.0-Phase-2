@@ -1,5 +1,13 @@
 # Deploying to AWS
 
+## Demo
+
+![demo](assets/2020-07-16%2013-13-13.gif)
+
+URL: [https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/](https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/)
+
+## Instructions and Notes
+
 Install Node and NPM
 
 ```bash
