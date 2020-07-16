@@ -2,6 +2,8 @@
 
 This contains the solutions to the assignments given in The School of AI - Extensive Vision AI 4.0 EVA4 Phase2
 
+## Website: [https://satyajitghana.github.io/TSAI-DeepVision-EVA4.0-Phase-2/](https://satyajitghana.github.io/TSAI-DeepVision-EVA4.0-Phase-2/)
+
 1. [Deploy to AWS](01-Deploy-To-AWS/README.md)
 
     This was the first time i deployed a DL model on AWS, it was quite an experience, i had to setup WSL to work, then PyCharm to work with my windows's anaconda, and then making sure that the WSL anaconda requirements match with windows anaconda. maaaaan why is it so difficult to share conda envs ?
