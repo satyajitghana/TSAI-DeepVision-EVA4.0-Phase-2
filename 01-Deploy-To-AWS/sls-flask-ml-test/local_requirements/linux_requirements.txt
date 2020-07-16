@@ -1,0 +1,30 @@
+boto3 @ file:///tmp/build/80754af9/boto3_1593439033587/work
+botocore @ file:///tmp/build/80754af9/botocore_1593435624439/work
+brotlipy==0.7.0
+certifi==2020.6.20
+cffi==1.14.0
+click==7.1.2
+cryptography==2.9.2
+docutils==0.15.2
+Flask==1.1.2
+idna @ file:///tmp/build/80754af9/idna_1593446292537/work
+itsdangerous==1.1.0
+Jinja2==2.11.2
+jmespath @ file:///tmp/build/80754af9/jmespath_1594304593830/work
+MarkupSafe==1.1.1
+mkl-fft==1.1.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+numpy==1.18.5
+olefile==0.46
+Pillow @ file:///tmp/build/80754af9/pillow_1594307295532/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
+PySocks==1.7.1
+python-dateutil==2.8.1
+s3transfer==0.3.3
+six==1.15.0
+torch==1.5.1
+torchvision==0.6.0a0+35d732a
+urllib3==1.25.9
+Werkzeug==1.0.1

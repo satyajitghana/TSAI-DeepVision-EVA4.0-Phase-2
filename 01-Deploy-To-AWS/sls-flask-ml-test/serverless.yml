@@ -1,0 +1,65 @@
+service: sls-flask-ml-test
+plugins:
+    - serverless-python-requirements
+    - serverless-wsgi
+
+custom:
+    wsgi:
+        app: app.app
+        packRequirements: false
+    pythonRequirements:
+        # dockerizePip: true
+        zip: true
+        slim: true
+        strip: false
+        noDeploy:
+            - docutils
+            - jmespath
+            - pip
+            - python-dateutil
+            - setuptools
+            - six
+            - tensorboard
+        useStaticCache: true
+        useDownloadCache: true
+
+package:
+    individually: false
+    exclude:
+        - package.json
+        - package-log.json
+        - node_modules/**
+        - cache/**
+        - test/**
+        - __pycache__/**
+        - .pytest_cache/**
+        - model/**
+        - models/**
+        - .cache/**
+        - .requirement.zip
+        - .serverless/**
+
+provider:
+    name: aws
+    runtime: python3.8
+    stage: dev
+    region: ap-south-1
+    timeout: 60
+    environment:
+        S3_BUCKET: thetensorclan-models
+        MODEL_PATH: resnet34.pt
+        PRODUCTION: TRUE
+    iamRoleStatements:
+        - Effect: "Allow"
+          Action:
+              - s3:getObject
+          Resource: arn:aws:s3:::thetensorclan-models/*
+
+functions:
+    app:
+        handler: wsgi_handler.handler
+        memorySize: 1408
+        timeout: 60
+        events:
+            - http: ANY /
+            - http: "ANY {proxy+}"
