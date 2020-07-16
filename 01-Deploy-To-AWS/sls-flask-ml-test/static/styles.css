@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono');
 
 /* Global */
 html {
@@ -17,6 +17,7 @@ body {
 
 .line-1 {
     position: relative;
+    color: #e74c3c;
     top: 50%;
     width: 17em;
     margin: 0 auto;
