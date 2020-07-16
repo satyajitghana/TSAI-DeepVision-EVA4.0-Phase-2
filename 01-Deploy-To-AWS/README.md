@@ -52,3 +52,12 @@ conda activate sls-flask
 sls plugin install -n serverless-python-requirements
 sls plugin install -n serverless-wsgi
 ```
+
+Convert model to JIT
+
+```python
+>>> import torch
+>>> model = torch.hub.load('pytorch/vision:v0.6.0', 'mobilenet_v2', pretrained=True)
+>>> traced_model = torch.jit.trace(model, torch.randn(1, 3, 224, 224))
+>>> traced_model.save('mobilenetv2.pt')
+```
