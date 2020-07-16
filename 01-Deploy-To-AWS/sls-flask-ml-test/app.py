@@ -54,11 +54,9 @@ if 'PRODUCTION' in os.environ:
 # local development environment
 else:
     logger.info('Loading Model ...')
-    model: RecursiveScriptModule = torch.jit.load("models/resnet34.pt")
+    model: RecursiveScriptModule = torch.jit.load("models/mobilenetv2.pt")
     logger.info('Model Loaded !')
     app.config["DEBUG"] = True
-
-UPLOAD_FOLDER = '/tmp'
 
 
 @app.route("/")

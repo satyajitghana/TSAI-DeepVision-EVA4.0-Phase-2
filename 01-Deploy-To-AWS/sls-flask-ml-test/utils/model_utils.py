@@ -19,7 +19,7 @@ def transform_image(image: Image.Image) -> Tensor:
     """
     try:
         trans: Compose = T.Compose([
-            T.Resize(255),
+            T.Resize(256),
             T.CenterCrop(224),
             T.ToTensor(),
             T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])

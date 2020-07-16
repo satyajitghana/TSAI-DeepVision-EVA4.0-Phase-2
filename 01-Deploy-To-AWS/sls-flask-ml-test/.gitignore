@@ -22,8 +22,5 @@ node_modules
 .cache/
 .requirements.zip
 
-# App Stuff
-models/
-
 # PyCharm
 __pycache__/
