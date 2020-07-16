@@ -61,3 +61,25 @@ Convert model to JIT
 >>> traced_model = torch.jit.trace(model, torch.randn(1, 3, 224, 224))
 >>> traced_model.save('mobilenetv2.pt')
 ```
+
+> IMPORTANT
+
+Make sure to add Binary Media Types in Amazon API Gateway Settings
+
+```txt
+multipart/form-data
+*/*
+```
+
+Deploy to SLS using
+
+```bash
+sls deploy
+```
+
+> NOTE: If you get any kind of error which says .serverless/requirements not found, just rerun `sls deploy` 2-3 times, it'll fix itself
+
+## Some Gotchas
+
+- Python Logging does not work the way you think, there's already a lambda logger running, so you'll have to override that logger
+- i faced a lot of issues with PIL, and the image wasn't opening, then in realised that i hadn't enabled the binary media type in the gateway settings, my bad
