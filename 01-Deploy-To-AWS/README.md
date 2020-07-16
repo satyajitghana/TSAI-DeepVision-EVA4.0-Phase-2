@@ -83,3 +83,5 @@ sls deploy
 
 - Python Logging does not work the way you think, there's already a lambda logger running, so you'll have to override that logger
 - i faced a lot of issues with PIL, and the image wasn't opening, then in realised that i hadn't enabled the binary media type in the gateway settings, my bad
+- If you want to test image upload, please use the bare flask app, having the pytorch depency along with it makes the size 142 MB and everytime uploading that much size hurts me, so just use the bare flask app, test it, and then finally integrate the model
+- LOG EVERYTHING ! LOGS ARE YOUR BEST FRIEND
