@@ -6,6 +6,10 @@
 
 URL: [https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/](https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/)
 
+## CloudWatch Logs
+
+![logs](assets/logs.png)
+
 ## Instructions and Notes
 
 Install Node and NPM
