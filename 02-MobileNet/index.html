@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>README</title>
+  <title>README.md</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
@@ -32,6 +32,8 @@
 </li>
 </ol>
 <h2 id="solution">Solution</h2>
+<p><strong>Deployed:</strong> <a href="https://floating-refuge-59093.herokuapp.com/">https://floating-refuge-59093.herokuapp.com/</a><br>
+Look at bottom of this file for how i deployed to Heroku</p>
 <p>Creation of IFO Dataset</p>
 <p>Dataset Link: <a href="https://drive.google.com/file/d/1LXbEadbpuvTJVwj5thGrlMjYP9hzt6Wn/view?usp=sharing">https://drive.google.com/file/d/1LXbEadbpuvTJVwj5thGrlMjYP9hzt6Wn/view?usp=sharing</a></p>
 <p>PreProcess raw dataset: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/IFO_preprocess.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/IFO_preprocess.ipynb</a></p>
@@ -92,6 +94,27 @@ Winged_Drones                59  ...           1335
 </code></pre>
 <p><strong>Confusion Matrix</strong></p>
 <p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/confusion_matrix.png?raw=true" alt="enter image description here"></p>
+<h2 id="instructions-of-how-i-deployed-to-heroku">Instructions of how i deployed to Heroku</h2>
+<p>Refer to <strong><a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/ifo-app">ifo-app</a></strong> for source code</p>
+<p>Make sure your requirements.txt uses these version of torch and torchvision, there are for cpu and python3.6 which heroku uses</p>
+<p><strong>requirements.txt</strong></p>
+<pre class=" language-text"><code class="prism  language-text">https://download.pytorch.org/whl/cpu/torch-1.6.0%2Bcpu-cp36-cp36m-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torchvision-0.7.0%2Bcpu-cp36-cp36m-linux_x86_64.whl
+</code></pre>
+<p>You can find pytorch releases here: <a href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a></p>
+<p>now <strong><code>Procfile</code></strong></p>
+<pre class=" language-text"><code class="prism  language-text">web: sh setup.sh &amp;&amp; streamlit run app.py
+</code></pre>
+<p>Initialize a empty git repo</p>
+<pre class=" language-shell"><code class="prism  language-shell">git init
+git add .
+git commit -m "initial build"
+</code></pre>
+<p>Now create a heroku project and push to it !</p>
+<pre class=" language-shell"><code class="prism  language-shell">heroku create
+git push heroku master
+</code></pre>
+<p>NOTE: you can also connect your github repo to heroku and it’ll build on push to github</p>
 </div>
 </body>
 

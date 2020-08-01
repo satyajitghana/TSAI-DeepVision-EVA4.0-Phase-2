@@ -18,6 +18,9 @@
 
 ## Solution
 
+**Deployed:** [https://floating-refuge-59093.herokuapp.com/](https://floating-refuge-59093.herokuapp.com/)
+Look at bottom of this file for how i deployed to Heroku
+
 Creation of IFO Dataset
 
 Dataset Link: [https://drive.google.com/file/d/1LXbEadbpuvTJVwj5thGrlMjYP9hzt6Wn/view?usp=sharing](https://drive.google.com/file/d/1LXbEadbpuvTJVwj5thGrlMjYP9hzt6Wn/view?usp=sharing)
@@ -106,4 +109,40 @@ Winged_Drones                59  ...           1335
 
 ![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/confusion_matrix.png?raw=true)
 
+## Instructions of how i deployed to Heroku
 
+Refer to **[ifo-app](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/ifo-app)** for source code
+
+Make sure your requirements.txt uses these version of torch and torchvision, there are for cpu and python3.6 which heroku uses
+
+**requirements.txt**
+
+```text
+https://download.pytorch.org/whl/cpu/torch-1.6.0%2Bcpu-cp36-cp36m-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torchvision-0.7.0%2Bcpu-cp36-cp36m-linux_x86_64.whl
+```
+
+You can find pytorch releases here: https://download.pytorch.org/whl/torch_stable.html
+
+now **`Procfile`**
+
+```text
+web: sh setup.sh && streamlit run app.py
+```
+
+Initialize a empty git repo
+
+```shell
+git init
+git add .
+git commit -m "initial build"
+```
+
+Now create a heroku project and push to it !
+
+```shell
+heroku create
+git push heroku master
+```
+
+NOTE: you can also connect your github repo to heroku and it'll build on push to github
