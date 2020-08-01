@@ -109,9 +109,19 @@ Winged_Drones                59  ...           1335
 
 ![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/confusion_matrix.png?raw=true)
 
-## Instructions of how i deployed to Heroku
+## Instructions for Streamlit & Deploy to Heroku
 
 Refer to **[ifo-app](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/ifo-app)** for source code
+
+Install streamlit
+
+```shell
+pip install streamlit
+```
+
+Now after wrting app.py simply run `streamlit run app.py`, check if everything works
+
+Cool, Now let's Deploy!
 
 Make sure your requirements.txt uses these version of torch and torchvision, there are for cpu and python3.6 which heroku uses
 

@@ -94,8 +94,13 @@ Winged_Drones                59  ...           1335
 </code></pre>
 <p><strong>Confusion Matrix</strong></p>
 <p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/confusion_matrix.png?raw=true" alt="enter image description here"></p>
-<h2 id="instructions-of-how-i-deployed-to-heroku">Instructions of how i deployed to Heroku</h2>
+<h2 id="instructions-for-streamlit--deploy-to-heroku">Instructions for Streamlit &amp; Deploy to Heroku</h2>
 <p>Refer to <strong><a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/ifo-app">ifo-app</a></strong> for source code</p>
+<p>Install streamlit</p>
+<pre class=" language-shell"><code class="prism  language-shell">pip install streamlit
+</code></pre>
+<p>Now after wrting <a href="http://app.py">app.py</a> simply run <code>streamlit run app.py</code>, check if everything works</p>
+<p>Cool, Now let’s Deploy!</p>
 <p>Make sure your requirements.txt uses these version of torch and torchvision, there are for cpu and python3.6 which heroku uses</p>
 <p><strong>requirements.txt</strong></p>
 <pre class=" language-text"><code class="prism  language-text">https://download.pytorch.org/whl/cpu/torch-1.6.0%2Bcpu-cp36-cp36m-linux_x86_64.whl

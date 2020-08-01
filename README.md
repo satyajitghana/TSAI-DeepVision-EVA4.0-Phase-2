@@ -16,4 +16,5 @@ This contains the solutions to the assignments given in The School of AI - Exten
 
 2. [MobileNet - Training Custom IFO Dataset](02-MobileNet/index.html)
 
-    Here we created our custom Identified-Flying-Objects dataset, preprocessed it, and trained a MobileNet Model, then deployed it into AWS
+    Here we created our custom Identified-Flying-Objects dataset, preprocessed it, and trained a MobileNet Model, then deployed it into AWS.
+    Also i made a streamlit app and deployed it to heroku ! [https://floating-refuge-59093.herokuapp.com/](https://floating-refuge-59093.herokuapp.com/)
