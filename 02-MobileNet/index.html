@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="mobilenet">02. MobileNet</h1>
+<h2 id="assignment">Assignment</h2>
+<ol>
+<li>“Each” batch is supposed to collect 1000 images for the classes mentioned above:
+<ol>
+<li>Google Drive Link had been emailed to you (one person in every group, you can add rest) already</li>
+<li>When you search, make sure to add some country names like “Small Quadcopter India”. You cannot use these 3 names “USA”, “India” and “China”. We are trying to avoid downloading the same files.</li>
+<li>In all of these images, the objects MUST be flying and not on the ground (so no product images or them on the ground)</li>
+<li>Don’t use Google Images only, use Flickr, Bing, Yahoo, DuckDuckGo</li>
+<li>Do not rename the files, as we’d like to know if the same files are there.</li>
+<li>You need to add 1000 images to the respective folders on Google Drive <strong>before Wednesday Noon</strong>.</li>
+</ol>
+</li>
+<li>Train (transfer learning) MobileNet-V2 on a custom dataset of 31000 images:
+<ol>
+<li>21k train, 10k test, remove duplicated (same names)</li>
+<li>with 4 classes Small 4Copter, Large 4Copter, Winged Drones and Flying Birds</li>
+<li>model is trained on 224x224, images you’ll download are not 224x224. Think and implement the best strategy</li>
+<li>Upload the model on Lambda, and keep it ready for future use (use the same S3 bucket).</li>
+</ol>
+</li>
+</ol>
+<h2 id="solution">Solution</h2>
+<p>Creation of IFO Dataset</p>
+<p>Dataset Link: <a href="https://drive.google.com/file/d/1LXbEadbpuvTJVwj5thGrlMjYP9hzt6Wn/view?usp=sharing">https://drive.google.com/file/d/1LXbEadbpuvTJVwj5thGrlMjYP9hzt6Wn/view?usp=sharing</a></p>
+<p>PreProcess raw dataset: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/IFO_preprocess.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/IFO_preprocess.ipynb</a></p>
+<p>DatasetVisualization: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/01_IFODataset.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/01_IFODataset.ipynb</a></p>
+<p>Training: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/02_Training.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/02_Training.ipynb</a></p>
+<p>Misclassifications: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/03_Misclassifications.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/03_Misclassifications.ipynb</a></p>
+<h3 id="dataset">Dataset</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token punctuation">{</span>
+    <span class="token string">"Flying_Birds"</span><span class="token punctuation">:</span> <span class="token number">8164</span><span class="token punctuation">,</span>
+    <span class="token string">"Large_QuadCopters"</span><span class="token punctuation">:</span> <span class="token number">4886</span><span class="token punctuation">,</span>
+    <span class="token string">"Small_QuadCopters"</span><span class="token punctuation">:</span> <span class="token number">3612</span><span class="token punctuation">,</span>
+    <span class="token string">"Winged_Drones"</span><span class="token punctuation">:</span> <span class="token number">5531</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/dataset.png?raw=true" alt="enter image description here"><br>
+Dataset</p>
+<p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/aug_dataset.png?raw=true" alt="enter image description here"><br>
+Augmented Dataset</p>
+<h3 id="training-logs">Training Logs</h3>
+<p><img src="https://raw.githubusercontent.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/b84ac8be9a712732d1bbfae0dad919318680db99/02-MobileNet/images/BatchLoss_Train_loss.svg" alt="enter image description here"><br>
+BatchLoss-Train</p>
+<p><img src="https://raw.githubusercontent.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/b84ac8be9a712732d1bbfae0dad919318680db99/02-MobileNet/images/EpochLoss_Test_loss.svg" alt="enter image description here"><br>
+EpochLoss-Test</p>
+<p><img src="https://raw.githubusercontent.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/b84ac8be9a712732d1bbfae0dad919318680db99/02-MobileNet/images/EpochLoss_Train_loss.svg" alt="enter image description here"><br>
+EpochLoss-Train</p>
+<p><img src="https://raw.githubusercontent.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/b84ac8be9a712732d1bbfae0dad919318680db99/02-MobileNet/images/EpochAccuracy_Train_accuracy.svg" alt="enter image description here"><br>
+EpochAccuracy-Train</p>
+<p><img src="https://raw.githubusercontent.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/b84ac8be9a712732d1bbfae0dad919318680db99/02-MobileNet/images/EpochAccuracy_Test_accuracy.svg" alt="enter image description here"><br>
+EpochAccuracy-Test</p>
+<h3 id="misclassifications">Misclassifications</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token punctuation">{</span>
+	<span class="token string">'Flying_Birds'</span><span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+	<span class="token string">'Large_QuadCopters'</span><span class="token punctuation">:</span> <span class="token number">133</span><span class="token punctuation">,</span>
+	<span class="token string">'Small_QuadCopters'</span><span class="token punctuation">:</span> <span class="token number">748</span><span class="token punctuation">,</span>
+	<span class="token string">'Winged_Drones'</span><span class="token punctuation">:</span> <span class="token number">324</span>
+ <span class="token punctuation">}</span>
+</code></pre>
+<p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/misclassifications.png?raw=true" alt="enter image description here"></p>
+<p><strong>Classification Report</strong></p>
+<pre class=" language-text"><code class="prism  language-text">                   precision    recall  f1-score   support
+
+     Flying_Birds       0.96      0.99      0.98      2449
+Large_QuadCopters       0.58      0.91      0.71      1466
+Small_QuadCopters       0.84      0.31      0.45      1084
+    Winged_Drones       0.94      0.80      0.87      1659
+
+         accuracy                           0.82      6658
+        macro avg       0.83      0.75      0.75      6658
+     weighted avg       0.85      0.82      0.80      6658
+
+                   Flying_Birds  ...  Winged_Drones
+Flying_Birds               2431  ...             12
+Large_QuadCopters            29  ...             50
+Small_QuadCopters            12  ...             24
+Winged_Drones                59  ...           1335
+
+[4 rows x 4 columns]
+</code></pre>
+<p><strong>Confusion Matrix</strong></p>
+<p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/confusion_matrix.png?raw=true" alt="enter image description here"></p>
+</div>
+</body>
+
+</html>

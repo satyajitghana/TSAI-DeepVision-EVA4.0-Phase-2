@@ -13,3 +13,7 @@ This contains the solutions to the assignments given in The School of AI - Exten
     I learnt that debugging in production is really difficult, you have to rely on logs, so from now on, please do proper logging, and always test on local dev env before deploying.
 
     finally i deployed it on [https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/]( https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/)
+
+2. [MobileNet - Training Custom IFO Dataset](02-MobileNet/index.html)
+
+    Here we created our custom Identified-Flying-Objects dataset, preprocessed it, and trained a MobileNet Model, then deployed it into AWS
