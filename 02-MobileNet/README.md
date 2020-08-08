@@ -36,6 +36,66 @@ Misclassifications: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Pha
 ### Dataset
 
 ```python
+class IFODataset(Dataset):
+    """ 
+ Dataset generator for MobileNetV2 implementation on Identified
+ flying objects dataset
+ """
+    
+    class_names = ['Flying_Birds', 'Large_QuadCopters', 'Small_QuadCopters', 'Winged_Drones']
+
+    def __init__(self, root, source_zipfile, transform=None):
+
+        self.root = Path(root) / 'IFO'
+        self.root.mkdir(parents=True, exist_ok=True)
+        self.source_zipfile = Path(source_zipfile)
+        self.transform = transform
+
+        if os.path.isdir(self.root / 'IFOCleaned'):
+            print(f"dataset folder/files already exist in {self.root / 'IFOCleaned'}")
+        else:
+            self.extractall()
+
+        self.images_paths = sorted(list(Path(self.root / 'IFOCleaned').glob('*/*.jpg')))
+        self.targets = [self.class_names.index(image_path.parent.name) for image_path in self.images_paths]
+
+        print(f'found {len(self.images_paths)} images in total')
+        l = list(dataset.targets)
+        images_per_class = dict((dataset.class_names[x],l.count(x)) for x in set(l))
+        print(json.dumps(images_per_class, indent=4))
+
+        # split indices to train and test, use stratify to distribute equally
+        self.train_idxs, self.test_idxs = train_test_split(np.arange(len(self.images_paths)), test_size=0.3, shuffle=True, stratify=self.targets)
+    
+    def extractall(self):
+        print('Extracting the dataset zip file')
+        zipf = ZipFile(self.source_zipfile, 'r')
+        zipf.extractall(self.root)
+
+    def split_dataset(self):
+        return Subset(self, indices=self.train_idxs), Subset(self, self.test_idxs)
+    
+    def __len__(self):
+        return len(self.images_paths)
+    
+    def __getitem__(self, index):
+
+        image_path = self.images_paths[index]
+        image = Image.open(image_path)
+        image = image.convert('RGB')
+
+        target = self.targets[index]
+        
+        if self.transform:
+            image = self.transform(image)
+
+        return image, target
+```
+
+The dataset is a simple zip file with the classes in their individual folders, what's interesting is how we transforms the images for training
+
+**Some dataset stats**
+```python
 {
     "Flying_Birds": 8164,
     "Large_QuadCopters": 4886,
@@ -43,11 +103,48 @@ Misclassifications: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Pha
     "Winged_Drones": 5531
 }
 ```
+```python
+"mean = ['0.533459901809692', '0.584880530834198', '0.615305066108704']"
+"std  = ['0.172962218523026', '0.167985364794731', '0.184633478522301']"
+```
+
+### Transformations
+
+```python
+train_transforms = A.Compose([
+                                    #   A.VerticalFlip(), not useful, flying objects cannot be flipped vertically
+                                      A.HorizontalFlip(),
+                                      A.LongestMaxSize(max_size=500),
+                                      A.Normalize(mean=self.mean, std=self.std),
+                                      A.PadIfNeeded(min_height=500, min_width=500, border_mode=0, always_apply=True, value=self.mean),
+                                      A.Resize(height=224, width=224, always_apply=True),
+                                      A.Rotate(limit=30, border_mode=0, always_apply=False, value=self.mean),
+                                      A.Cutout(num_holes=2, max_h_size=48, max_w_size=48, p=0.9, fill_value=self.mean),
+                                      AT.ToTensor()
+                                      ])
+```
+
+The Series of Transformations are
+- `Horizontal Flip`
+	- looking at the dataset, we cannot do vertical flip (birds flying upside down ? quadcopters upside down ? doesn't seem right), so we go for horizontal flip
+- `LongestMaxSize`
+	- this will resize the image such that the longest size (width/height) is 500 pixels
+- `Normalize`
+	- pretty common, we've already calculated the mean and std of the dataset so we normalize it during training
+- `PadIfNeeded`
+	- this is the tricky part, the model needs a square image, and the images in our dataset are not squares, so we pad the image such that it becomes a square of `500x500`
+- `Resize`
+	- MobileNetV2 needs a `224x244` image so we convert it to such
+- `Rotate`
+	- addtional transformation to just tilt the image by `+-30` degrees to increase the test accuracy
+- `CutOut`
+	- Cutout regularization is similar to dropout, but works better, as proved in its paper
+
 ![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/dataset.png?raw=true)
-Dataset
+**Dataset**
 
 ![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/aug_dataset.png?raw=true)
-Augmented Dataset
+**Augmented Dataset**
 
 
 ### Training Logs

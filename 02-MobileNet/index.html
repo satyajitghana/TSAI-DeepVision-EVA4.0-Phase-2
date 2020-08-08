@@ -41,6 +41,63 @@ Look at bottom of this file for how i deployed to Heroku</p>
 <p>Training: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/02_Training.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/02_Training.ipynb</a></p>
 <p>Misclassifications: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/03_Misclassifications.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/03_Misclassifications.ipynb</a></p>
 <h3 id="dataset">Dataset</h3>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">class</span> <span class="token class-name">IFODataset</span><span class="token punctuation">(</span>Dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" 
+ Dataset generator for MobileNetV2 implementation on Identified
+ flying objects dataset
+ """</span>
+    
+    class_names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Flying_Birds'</span><span class="token punctuation">,</span> <span class="token string">'Large_QuadCopters'</span><span class="token punctuation">,</span> <span class="token string">'Small_QuadCopters'</span><span class="token punctuation">,</span> <span class="token string">'Winged_Drones'</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> source_zipfile<span class="token punctuation">,</span> transform<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+        self<span class="token punctuation">.</span>root <span class="token operator">=</span> Path<span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token string">'IFO'</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>parents<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> exist_ok<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>source_zipfile <span class="token operator">=</span> Path<span class="token punctuation">(</span>source_zipfile<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>transform <span class="token operator">=</span> transform
+
+        <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root <span class="token operator">/</span> <span class="token string">'IFOCleaned'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"dataset folder/files already exist in {self.root / 'IFOCleaned'}"</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>extractall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>images_paths <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>Path<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root <span class="token operator">/</span> <span class="token string">'IFOCleaned'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>glob<span class="token punctuation">(</span><span class="token string">'*/*.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>targets <span class="token operator">=</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>class_names<span class="token punctuation">.</span>index<span class="token punctuation">(</span>image_path<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token keyword">for</span> image_path <span class="token keyword">in</span> self<span class="token punctuation">.</span>images_paths<span class="token punctuation">]</span>
+
+        <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'found {len(self.images_paths)} images in total'</span><span class="token punctuation">)</span>
+        l <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>targets<span class="token punctuation">)</span>
+        images_per_class <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>class_names<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span>l<span class="token punctuation">.</span>count<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">set</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>images_per_class<span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># split indices to train and test, use stratify to distribute equally</span>
+        self<span class="token punctuation">.</span>train_idxs<span class="token punctuation">,</span> self<span class="token punctuation">.</span>test_idxs <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>images_paths<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> stratify<span class="token operator">=</span>self<span class="token punctuation">.</span>targets<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">extractall</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Extracting the dataset zip file'</span><span class="token punctuation">)</span>
+        zipf <span class="token operator">=</span> ZipFile<span class="token punctuation">(</span>self<span class="token punctuation">.</span>source_zipfile<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+        zipf<span class="token punctuation">.</span>extractall<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">split_dataset</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> Subset<span class="token punctuation">(</span>self<span class="token punctuation">,</span> indices<span class="token operator">=</span>self<span class="token punctuation">.</span>train_idxs<span class="token punctuation">)</span><span class="token punctuation">,</span> Subset<span class="token punctuation">(</span>self<span class="token punctuation">,</span> self<span class="token punctuation">.</span>test_idxs<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>images_paths<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+        image_path <span class="token operator">=</span> self<span class="token punctuation">.</span>images_paths<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+        image <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>image_path<span class="token punctuation">)</span>
+        image <span class="token operator">=</span> image<span class="token punctuation">.</span>convert<span class="token punctuation">(</span><span class="token string">'RGB'</span><span class="token punctuation">)</span>
+
+        target <span class="token operator">=</span> self<span class="token punctuation">.</span>targets<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+        
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>transform<span class="token punctuation">:</span>
+            image <span class="token operator">=</span> self<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>image<span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> image<span class="token punctuation">,</span> target
+</code></pre>
+<p>The dataset is a simple zip file with the classes in their individual folders, what’s interesting is how we transforms the images for training</p>
+<p><strong>Some dataset stats</strong></p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token punctuation">{</span>
     <span class="token string">"Flying_Birds"</span><span class="token punctuation">:</span> <span class="token number">8164</span><span class="token punctuation">,</span>
     <span class="token string">"Large_QuadCopters"</span><span class="token punctuation">:</span> <span class="token number">4886</span><span class="token punctuation">,</span>
@@ -48,10 +105,64 @@ Look at bottom of this file for how i deployed to Heroku</p>
     <span class="token string">"Winged_Drones"</span><span class="token punctuation">:</span> <span class="token number">5531</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token string">"mean = ['0.533459901809692', '0.584880530834198', '0.615305066108704']"</span>
+<span class="token string">"std  = ['0.172962218523026', '0.167985364794731', '0.184633478522301']"</span>
+</code></pre>
+<h3 id="transformations">Transformations</h3>
+<pre class=" language-python"><code class="prism  language-python">train_transforms <span class="token operator">=</span> A<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span><span class="token punctuation">[</span>
+                                    <span class="token comment">#   A.VerticalFlip(), not useful, flying objects cannot be flipped vertically</span>
+                                      A<span class="token punctuation">.</span>HorizontalFlip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                      A<span class="token punctuation">.</span>LongestMaxSize<span class="token punctuation">(</span>max_size<span class="token operator">=</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                      A<span class="token punctuation">.</span>Normalize<span class="token punctuation">(</span>mean<span class="token operator">=</span>self<span class="token punctuation">.</span>mean<span class="token punctuation">,</span> std<span class="token operator">=</span>self<span class="token punctuation">.</span>std<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                      A<span class="token punctuation">.</span>PadIfNeeded<span class="token punctuation">(</span>min_height<span class="token operator">=</span><span class="token number">500</span><span class="token punctuation">,</span> min_width<span class="token operator">=</span><span class="token number">500</span><span class="token punctuation">,</span> border_mode<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> always_apply<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> value<span class="token operator">=</span>self<span class="token punctuation">.</span>mean<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                      A<span class="token punctuation">.</span>Resize<span class="token punctuation">(</span>height<span class="token operator">=</span><span class="token number">224</span><span class="token punctuation">,</span> width<span class="token operator">=</span><span class="token number">224</span><span class="token punctuation">,</span> always_apply<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                      A<span class="token punctuation">.</span>Rotate<span class="token punctuation">(</span>limit<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">,</span> border_mode<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> always_apply<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> value<span class="token operator">=</span>self<span class="token punctuation">.</span>mean<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                      A<span class="token punctuation">.</span>Cutout<span class="token punctuation">(</span>num_holes<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> max_h_size<span class="token operator">=</span><span class="token number">48</span><span class="token punctuation">,</span> max_w_size<span class="token operator">=</span><span class="token number">48</span><span class="token punctuation">,</span> p<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span> fill_value<span class="token operator">=</span>self<span class="token punctuation">.</span>mean<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                      AT<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                                      <span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>The Series of Transformations are</p>
+<ul>
+<li><code>Horizontal Flip</code>
+<ul>
+<li>looking at the dataset, we cannot do vertical flip (birds flying upside down ? quadcopters upside down ? doesn’t seem right), so we go for horizontal flip</li>
+</ul>
+</li>
+<li><code>LongestMaxSize</code>
+<ul>
+<li>this will resize the image such that the longest size (width/height) is 500 pixels</li>
+</ul>
+</li>
+<li><code>Normalize</code>
+<ul>
+<li>pretty common, we’ve already calculated the mean and std of the dataset so we normalize it during training</li>
+</ul>
+</li>
+<li><code>PadIfNeeded</code>
+<ul>
+<li>this is the tricky part, the model needs a square image, and the images in our dataset are not squares, so we pad the image such that it becomes a square of <code>500x500</code></li>
+</ul>
+</li>
+<li><code>Resize</code>
+<ul>
+<li>MobileNetV2 needs a <code>224x244</code> image so we convert it to such</li>
+</ul>
+</li>
+<li><code>Rotate</code>
+<ul>
+<li>addtional transformation to just tilt the image by <code>+-30</code> degrees to increase the test accuracy</li>
+</ul>
+</li>
+<li><code>CutOut</code>
+<ul>
+<li>Cutout regularization is similar to dropout, but works better, as proved in its paper</li>
+</ul>
+</li>
+</ul>
 <p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/dataset.png?raw=true" alt="enter image description here"><br>
-Dataset</p>
+<strong>Dataset</strong></p>
 <p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/02-MobileNet/images/aug_dataset.png?raw=true" alt="enter image description here"><br>
-Augmented Dataset</p>
+<strong>Augmented Dataset</strong></p>
 <h3 id="training-logs">Training Logs</h3>
 <p><img src="https://raw.githubusercontent.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/b84ac8be9a712732d1bbfae0dad919318680db99/02-MobileNet/images/BatchLoss_Train_loss.svg" alt="enter image description here"><br>
 BatchLoss-Train</p>
