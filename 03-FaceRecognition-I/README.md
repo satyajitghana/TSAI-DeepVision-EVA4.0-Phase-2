@@ -35,3 +35,4 @@ Notebook: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/
 -   Something i did like is that `serverless` actually works in Windows with Docker WSL2 ! it was really really simple, nothing extra to do !, its necessary to use `DockerizePip` in the `serverless.yaml` because there might be packages, that rely on architecture, and docker makes sure of that. there were some compiled `.so` files that were causing this issues so i moved to windows serverless
     -   `npm install`
     -   `npx run sls deploy`
+-   this is really useful https://www.serverless.com/framework/docs/providers/aws/guide/serverless.yml/ , previously i had issues with the `API` not allowing binary media types, turns out i could have added it in the `serverless.yaml` itself ! saves some times. Now i dont have to manually configure the AWS API Gateway.
