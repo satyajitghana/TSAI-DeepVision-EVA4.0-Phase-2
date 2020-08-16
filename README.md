@@ -12,10 +12,17 @@ This contains the solutions to the assignments given in The School of AI - Exten
 
     I learnt that debugging in production is really difficult, you have to rely on logs, so from now on, please do proper logging, and always test on local dev env before deploying.
 
-    finally i deployed it on [https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/]( https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/)
+    finally i deployed it on [https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/](https://un64uvk2oi.execute-api.ap-south-1.amazonaws.com/dev/)
 
 2. [MobileNet - Training Custom IFO Dataset](02-MobileNet/index.html)
 
     Here we created our custom Identified-Flying-Objects dataset, preprocessed it, and trained a MobileNet Model, then deployed it into AWS.
-    
+
     Also i made a streamlit app and deployed it to heroku ! [https://floating-refuge-59093.herokuapp.com/](https://floating-refuge-59093.herokuapp.com/)
+
+3. [FaceRecognition-I - Implementing Face Swap !](03-FaceRecognition-I/)
+
+    Face Recognition start by aligning your face so it looks directly to the front. Here we implemented FaceSwap by aligning the two faces and then swapping the detected face. The face was detected using the dlib's 68 point frontal face detector.
+
+    The Flask Backend was deployed on AWS Lambda and the React Frontend on AWS Amplify
+    [https://master.d165apizgrkyke.amplifyapp.com/](https://master.d165apizgrkyke.amplifyapp.com/)

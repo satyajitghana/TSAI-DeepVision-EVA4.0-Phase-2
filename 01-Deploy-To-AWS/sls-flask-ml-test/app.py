@@ -14,6 +14,7 @@ except ImportError:
     pass
 
 from flask import Flask, request, Response, render_template, jsonify
+from flask_cors import CORS, cross_origin
 from torch.jit import RecursiveScriptModule
 import torch
 from botocore.client import BaseClient
@@ -32,6 +33,8 @@ sys.excepthook = lambda type, val, tb: logger.error("Unhandled exception:", exc_
 
 logger.info('Setting up Flask')
 app: Flask = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 if 'PRODUCTION' in os.environ:
     # BUCKET VARIABLES
@@ -65,6 +68,7 @@ def hello_thetensorclan() -> Response:
 
 
 @app.route('/classify', methods=['GET', 'POST'])
+@cross_origin()
 def upload_file() -> Response:
     if request.method == 'POST':
 
