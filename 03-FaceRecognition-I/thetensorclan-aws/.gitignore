@@ -1,0 +1,33 @@
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+__pycache__
+
+# node
+node_modules
+
+# Serverless directories
+.serverless/
+.cache/
+.requirements.zip
+
+# face utils
+face/shape_predictor_68_face_landmarks.dat
+face/shape_predictor_68_face_landmarks.dat.bz2
+
+# models
+*.pt

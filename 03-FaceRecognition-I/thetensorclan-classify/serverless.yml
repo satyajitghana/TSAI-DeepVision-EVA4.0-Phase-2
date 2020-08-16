@@ -1,0 +1,69 @@
+service: thetensorclan-aws-classify
+
+plugins:
+    - serverless-python-requirements
+    - serverless-wsgi
+
+custom:
+    wsgi:
+        app: app.app
+        packRequirements: false
+    pythonRequirements:
+        dockerizePip: true
+        zip: true
+        slim: true
+        strip: false
+        noDeploy:
+            - docutils
+            - jmespath
+            - pip
+            - python-dateutil
+            - setuptools
+            - six
+            - tensorboard
+            - dateutils
+        useStaticCache: true
+        useDownloadCache: true
+
+package:
+    individually: false
+    exclude:
+        - package.json
+        - package-log.json
+        - node_modules/**
+        - cache/**
+        - test/**
+        - __pycache__/**
+        - .pytest_cache/**
+        - .cache/**
+        - .requirement.zip
+        - .serverless/**
+        - models/*.pt
+
+provider:
+    name: aws
+    runtime: python3.7
+    stage: dev
+    region: ap-south-1
+    timeout: 60
+    environment:
+        S3_BUCKET: thetensorclan-models
+        PRODUCTION: TRUE
+    iamRoleStatements:
+        - Effect: "Allow"
+          Action:
+              - s3:getObject
+          Resource: arn:aws:s3:::thetensorclan-models/*
+    apiGateway:
+        binaryMediaTypes:
+            - "multipart/form-data"
+            - "*/*"
+
+functions:
+    app:
+        handler: wsgi_handler.handler
+        memorySize: 3008
+        timeout: 60
+        events:
+            - http: ANY /
+            - http: "ANY {proxy+}"

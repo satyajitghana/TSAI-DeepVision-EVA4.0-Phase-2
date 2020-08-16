@@ -1,0 +1,31 @@
+boto3==1.9.66
+botocore==1.12.189
+brotlipy==0.7.0
+certifi==2020.6.20
+cffi @ file:///tmp/build/80754af9/cffi_1596809855670/work
+click==7.1.2
+cryptography==2.9.2
+dlib @ file:///home/conda/feedstock_root/build_artifacts/dlib_1597241653647/work
+docutils==0.16
+Flask==1.1.2
+idna @ file:///tmp/build/80754af9/idna_1593446292537/work
+itsdangerous==1.1.0
+Jinja2==2.11.2
+jmespath @ file:///tmp/build/80754af9/jmespath_1594304593830/work
+MarkupSafe @ file:///tmp/build/80754af9/markupsafe_1594371495811/work
+mkl-fft==1.1.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1596233707986/work
+olefile==0.46
+Pillow @ file:///tmp/build/80754af9/pillow_1594307325547/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
+PySocks @ file:///tmp/build/80754af9/pysocks_1594394576006/work
+python-dateutil==2.8.1
+s3transfer==0.1.13
+six==1.15.0
+torch==1.6.0
+torchvision==0.7.0
+urllib3 @ file:///tmp/build/80754af9/urllib3_1597086586889/work
+Werkzeug==1.0.1

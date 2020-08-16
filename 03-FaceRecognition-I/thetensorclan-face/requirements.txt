@@ -1,0 +1,7 @@
+boto3==1.9.66
+Flask==1.1.2
+dlib==19.21.0
+numpy==1.19.1
+Pillow==7.2.0
+opencv-python==4.4.0.40
+Flask-Cors==3.0.8
