@@ -31,4 +31,7 @@ Notebook: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/
 
 -   I had to separate out the face and classify backend servers, since both at one single lambda wasn't possible
 -   **AWS Amplify** is damn cool !, all i did was push my React code to GitHub and it automatically picks up everything and deploys the website !
--   Since the PyTorch version updated, i had to setup the whole pipeline again, beginning from updating PyTorch to 1.6.0, but AWS Lambda has storage limit of 500MB, so on Lambda we still use PyTorch 1.5.1 and TorchVision 0.6.0
+-   Since the PyTorch version updated, i had to setup the whole pipeline again, beginning from updating `PyTorch` to `1.6.0`, but AWS Lambda has storage limit of `500MB`, so on Lambda we still use `PyTorch 1.5.1` and `TorchVision 0.6.0`
+-   Something i did like is that `serverless` actually works in Windows with Docker WSL2 ! it was really really simple, nothing extra to do !, its necessary to use `DockerizePip` in the `serverless.yaml` because there might be packages, that rely on architecture, and docker makes sure of that. there were some compiled `.so` files that were causing this issues so i moved to windows serverless
+    -   `npm install`
+    -   `npx run sls deploy`
