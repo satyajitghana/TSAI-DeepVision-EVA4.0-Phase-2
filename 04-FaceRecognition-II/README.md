@@ -32,6 +32,7 @@ All of the TensorClan Models can be found at https://drive.google.com/drive/fold
 
 ![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/demo2.gif?raw=true)
 
+`[right click -> open image in a new tab]` for better experience
 
 ## Explanation
 
