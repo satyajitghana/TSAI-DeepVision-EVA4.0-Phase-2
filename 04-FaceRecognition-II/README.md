@@ -11,20 +11,31 @@
 
 ## Solution
 
-Dataset created: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian-face-dataset](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian-face-dataset)
-
 `160x160` Face Aligned dataset:
 [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian_face_dataset_160](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian_face_dataset_160)
 
-Dataset Creation: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/CustomLFW%26Indian_Face_Dataset.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/CustomLFW%26Indian_Face_Dataset.ipynb)
+**Dataset Creation**: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/CustomLFW%26Indian_Face_Dataset.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/CustomLFW%26Indian_Face_Dataset.ipynb)
 
-Training: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_Indian_Face.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_Indian_Face.ipynb)
+[The above dataset was then added to LFW Dataset]
+
+LFW-Plus-Dataset (LFW + 10 Indian People): https://drive.google.com/file/d/17k_3guDwSKclVjpyxEmgSmRvB0Z64LCq/view?usp=sharing
+
+Training: 
+(Training on LFW + 10 Indian People)
+[https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_LFW_Plus.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_LFW_Plus.ipynb)
+
+(Training on 10 faces only)
+[https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_Indian_Face.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_Indian_Face.ipynb)
 
 All of the TensorClan Models can be found at https://drive.google.com/drive/folders/15y4WyvaJI9AsfioKUNX1inJtrDqn2UvV?usp=sharing
 
 ## Dataset
 
+Indian Faces Dataset
 ![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/faces.png?raw=true)
+
+LFW Dataset
+![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/lfw_dataset.png?raw=true)
 
 
 ##  Link [https://thetensorclan-web.herokuapp.com/](https://thetensorclan-web.herokuapp.com/)
@@ -36,9 +47,19 @@ Code for BackEnd: [https://github.com/extensive-vision-ai/thetensorclan-backend-
 
 ## Demo
 
+### LFW - Plus Recognizer (contains 10 additional people)
+
+![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/demo3.gif?raw=true)
+
+### Indian Faces Recognizer
+
 ![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/demo2.gif?raw=true)
 
 `[right click -> open image in a new tab]` for better experience
+
+## Train Metrics
+
+![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/train_loss.png?raw=true)
 
 ## Explanation
 
