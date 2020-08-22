@@ -1,0 +1,81 @@
+/content/indian_face_dataset_160/Mukesh_Ambani/mukesh ambani.png 122 33 270 216
+/content/indian_face_dataset_160/Mukesh_Ambani/Oj7wYFf5_2891.png 227 30 487 363
+/content/indian_face_dataset_160/Mukesh_Ambani/446-4467044_mukesh-ambani-laughing-hd-png-download.png 292 82 559 396
+/content/indian_face_dataset_160/Mukesh_Ambani/5da333684af909472213bcd3.png 125 40 336 306
+/content/indian_face_dataset_160/Mukesh_Ambani/bank-america-pays-mukesh-ambani-rs-1-3-crore.png 139 224 713 981
+/content/indian_face_dataset_160/Mukesh_Ambani/1565976710.png 237 59 423 317
+/content/indian_face_dataset_160/Mukesh_Ambani/mukesh-ambani.png 71 34 224 213
+/content/indian_face_dataset_160/Mukesh_Ambani/Mukesh-Ambani (1).png 350 79 610 413
+/content/indian_face_dataset_160/Mukesh_Ambani/mukesh_ambani_660_230420093650.png 210 26 487 379
+/content/indian_face_dataset_160/Mukesh_Ambani/Mukesh-Ambani-image.png 426 74 747 488
+/content/indian_face_dataset_160/MS_Dhoni/dhoni-main.png 314 94 469 291
+/content/indian_face_dataset_160/MS_Dhoni/dhoni face look-712264.png 47 96 291 392
+/content/indian_face_dataset_160/MS_Dhoni/pepsi.png 87 36 254 255
+/content/indian_face_dataset_160/MS_Dhoni/GettyImages-689405274-e1520010556769.png 74 30 235 237
+/content/indian_face_dataset_160/MS_Dhoni/AAK7p87.png 177 62 384 350
+/content/indian_face_dataset_160/MS_Dhoni/236019.png 281 91 611 539
+/content/indian_face_dataset_160/MS_Dhoni/08dhoni.png 139 54 346 316
+/content/indian_face_dataset_160/MS_Dhoni/post_image_09a475e.png 564 150 998 777
+/content/indian_face_dataset_160/MS_Dhoni/England-v-India-Royal-London-One-Day-Series-2014.png 227 94 430 329
+/content/indian_face_dataset_160/MS_Dhoni/intro.png 223 49 411 293
+/content/indian_face_dataset_160/Dr_APJ_Abdul_Kalam/19YT_ABDULKALAM_3.png 100 50 287 294
+/content/indian_face_dataset_160/Dr_APJ_Abdul_Kalam/2020_7$largeimg_445333248.png 184 90 453 445
+/content/indian_face_dataset_160/Dr_APJ_Abdul_Kalam/Dr-APJ-Kalam.png 204 44 363 245
+/content/indian_face_dataset_160/Dr_APJ_Abdul_Kalam/freepressjournal_import_2015_07_abdul-kalam_13.png 105 41 249 221
+/content/indian_face_dataset_160/Dr_APJ_Abdul_Kalam/APJ.png 309 94 497 342
+/content/indian_face_dataset_160/Dr_APJ_Abdul_Kalam/A._P._J._Abdul_Kalam.png 610 422 1578 1629
+/content/indian_face_dataset_160/Viswanathan_Anand/hfgh.png 425 101 740 513
+/content/indian_face_dataset_160/Viswanathan_Anand/Vishwanathan-Anand.png 243 39 405 247
+/content/indian_face_dataset_160/Viswanathan_Anand/Viswanathan-Anand (1).png 85 54 256 265
+/content/indian_face_dataset_160/Viswanathan_Anand/anand_1384164209_540x540.png 105 122 412 518
+/content/indian_face_dataset_160/Viswanathan_Anand/BIJOYjpg.png 150 37 300 225
+/content/indian_face_dataset_160/Viswanathan_Anand/9J5B7503.png 114 54 273 254
+/content/indian_face_dataset_160/Viswanathan_Anand/Viswanathan-Anand.png 347 76 588 389
+/content/indian_face_dataset_160/Viswanathan_Anand/846965-65453-rhhsmrlugi-1502464686.png 389 54 590 305
+/content/indian_face_dataset_160/Viswanathan_Anand/images.png 22 64 156 232
+/content/indian_face_dataset_160/Sachin_Tendulkar/38-Sachin-Tendulkar-new.png 336 37 500 246
+/content/indian_face_dataset_160/Sachin_Tendulkar/Sachin-Tendulkar-BW.png 264 101 457 349
+/content/indian_face_dataset_160/Sachin_Tendulkar/90705581-77e8-4260-b84d-d8568701e2b8.png 271 147 599 587
+/content/indian_face_dataset_160/Sachin_Tendulkar/unnamed.png 253 46 433 284
+/content/indian_face_dataset_160/Sachin_Tendulkar/65011.png 321 261 978 1154
+/content/indian_face_dataset_160/Sachin_Tendulkar/sachin-tendulkar-20710145-1-402.png 276 337 835 1016
+/content/indian_face_dataset_160/Sachin_Tendulkar/Sachin_Tendulkar_AFP.png 397 158 713 583
+/content/indian_face_dataset_160/Sachin_Tendulkar/sachin.png 347 141 643 525
+/content/indian_face_dataset_160/Sachin_Tendulkar/main-qimg-4eee1d4dd858a55846c76aed06dfed7b.png 166 87 364 343
+/content/indian_face_dataset_160/Dr_Sabita_Ghana/IMG_20200216_102849.png 96 67 206 200
+/content/indian_face_dataset_160/Dr_Sabita_Ghana/IMG_20161015_074944.png 79 78 253 294
+/content/indian_face_dataset_160/Dr_Sabita_Ghana/IMG_20190728_105038.png 142 129 342 379
+/content/indian_face_dataset_160/Dr_Sabita_Ghana/Screenshot_2019-07-28-19-24-26-192_com.whatsapp.png 59 44 174 181
+/content/indian_face_dataset_160/Dr_Sabita_Ghana/Screenshot_2018-01-20-19-44-18-865_com.android.chrome.png 83 73 210 231
+/content/indian_face_dataset_160/Ratan_Tata/Ratan Tata.png 233 89 564 519
+/content/indian_face_dataset_160/Ratan_Tata/ratan-tata-reuters-small-1200.png 294 83 726 658
+/content/indian_face_dataset_160/Ratan_Tata/dc-Cover-aur1c2k2mmikhfim0kdtcbv837-20170921110407.Medi.png 280 58 545 401
+/content/indian_face_dataset_160/Ratan_Tata/ratan tata go profile 1.png 98 31 203 160
+/content/indian_face_dataset_160/Ratan_Tata/Ratan-Tata.png 93 41 270 274
+/content/indian_face_dataset_160/Ratan_Tata/RatanTata-1280x720.png 799 98 1209 665
+/content/indian_face_dataset_160/Ratan_Tata/21bmarr-Cyrus-R+G3811C2D0.3.jpg.png 95 59 332 376
+/content/indian_face_dataset_160/Ratan_Tata/b8fb026fc27140f6e8b4bfb9ac5a42c4.png 178 47 426 368
+/content/indian_face_dataset_160/Ratan_Tata/Ratan-Tata-colour.png 249 48 509 399
+/content/indian_face_dataset_160/Ratan_Tata/ratan_tata_ndtv.png 113 49 364 366
+/content/indian_face_dataset_160/Gaur_Gopal_Das/images.jpeg-1-1.png 105 9 241 179
+/content/indian_face_dataset_160/Gaur_Gopal_Das/320fc7fb-e58c-4f80-a752-dc4081e3899e_Gaur Gopal Das  (4).png 66 29 179 166
+/content/indian_face_dataset_160/Gaur_Gopal_Das/Gaur-Gopal-Das.png 80 26 270 266
+/content/indian_face_dataset_160/Gaur_Gopal_Das/GGD11-e1544122616874.png 99 106 382 457
+/content/indian_face_dataset_160/Gaur_Gopal_Das/unnamed.png 170 71 391 349
+/content/indian_face_dataset_160/Gaur_Gopal_Das/gaur-gopal-das-gaur-gopal-das-viNLqY492-s-olUcqmZ_Wgx.1400x1400.png 98 32 256 228
+/content/indian_face_dataset_160/Narendra_Modi/228939-modi-bjp-manifesto-afp.png 448 89 783 503
+/content/indian_face_dataset_160/Narendra_Modi/im-4792.png 316 158 958 991
+/content/indian_face_dataset_160/Narendra_Modi/xnarendra-modi6-1589274440.jpg.pagespeed.ic.W3pv0z50pZ.png 237 41 392 232
+/content/indian_face_dataset_160/Narendra_Modi/narendra modi 2-1579695880.png 112 36 280 247
+/content/indian_face_dataset_160/Narendra_Modi/prime-minister-narendra-modi-speaks-media-inside-parliament-premises.png 208 74 481 411
+/content/indian_face_dataset_160/Narendra_Modi/jpg.png 409 123 766 594
+/content/indian_face_dataset_160/Narendra_Modi/EVNBCFUVAAA1tq5.png 222 169 669 715
+/content/indian_face_dataset_160/Narendra_Modi/nationalherald_2019-04_6ab11508-e26d-496a-8519-30091f0eded4_Modi_s_melodrama_betrays_fear_of_loss_of_face_in_Bengal_.png 296 70 510 336
+/content/indian_face_dataset_160/Narendra_Modi/Modi22-1592386663.png 242 157 636 674
+/content/indian_face_dataset_160/Narendra_Modi/prime-minister-narendra-modi-pti-1534169393-1548939717.png 177 71 435 400
+/content/indian_face_dataset_160/Rohan_Shravan/Mr.Rohan-Shravan_Founder-Director-Inkers.png 167 108 381 386
+/content/indian_face_dataset_160/Rohan_Shravan/maxresdefault.png 494 93 775 437
+/content/indian_face_dataset_160/Rohan_Shravan/pic_author_1438316497_temp.png 100 50 288 293
+/content/indian_face_dataset_160/Rohan_Shravan/eve.png 76 12 172 125
+/content/indian_face_dataset_160/Rohan_Shravan/1-552.png 252 47 459 316
+/content/indian_face_dataset_160/Rohan_Shravan/f324483a4979a0634fad4a9056704f91.png 45 51 189 229

@@ -13,6 +13,9 @@
 
 Dataset created: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian-face-dataset](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian-face-dataset)
 
+`160x160` Face Aligned dataset:
+[https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian_face_dataset_160](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian_face_dataset_160)
+
 Dataset Creation: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/CustomLFW%26Indian_Face_Dataset.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/CustomLFW%26Indian_Face_Dataset.ipynb)
 
 Training: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_Indian_Face.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_Indian_Face.ipynb)
