@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="face-recognition---ii">04 - Face Recognition - II</h1>
+<h2 id="assignment">Assignment</h2>
+<ol>
+<li>Refer to this beautiful  <a href="https://towardsdatascience.com/finetune-a-facial-recognition-classifier-to-recognize-your-face-using-pytorch-d00a639d9a79">blog (Links to an external site.)</a>.</li>
+<li>Collect 10 facial images of 10 people you know (stars, politicians, etc). The more the images you collect, the better your experience would be. Add it to this  <a href="http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz">LFW (Links to an external site.)</a>  dataset.</li>
+<li>Train as in the blog and upload the FR model to Lambda</li>
+<li>Share the link to “that” single page.</li>
+<li>Share the link to GitHub repo.</li>
+</ol>
+<h2 id="solution">Solution</h2>
+<p>Dataset created: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian-face-dataset">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/04-FaceRecognition-II/indian-face-dataset</a></p>
+<p>Dataset Creation: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/CustomLFW%26Indian_Face_Dataset.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/CustomLFW%26Indian_Face_Dataset.ipynb</a></p>
+<p>Training: <a href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_Indian_Face.ipynb">https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/Train_MTCNN_Indian_Face.ipynb</a></p>
+<p>All of the TensorClan Models can be found at <a href="https://drive.google.com/drive/folders/15y4WyvaJI9AsfioKUNX1inJtrDqn2UvV?usp=sharing">https://drive.google.com/drive/folders/15y4WyvaJI9AsfioKUNX1inJtrDqn2UvV?usp=sharing</a></p>
+<h2 id="dataset">Dataset</h2>
+<p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/faces.png?raw=true" alt="enter image description here"></p>
+<h2 id="link-httpsthetensorclan-web.herokuapp.com">Link <a href="https://thetensorclan-web.herokuapp.com/">https://thetensorclan-web.herokuapp.com/</a></h2>
+<p><strong>Backend:</strong> <a href="https://thetensorclan-backend.herokuapp.com/">https://thetensorclan-backend.herokuapp.com/</a></p>
+<h2 id="demo">Demo</h2>
+<p><img src="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/demo2.gif?raw=true" alt="enter image description here"></p>
+<h2 id="explanation">Explanation</h2>
+<p>Remember that we had created FaceAlign previously in Face-Recognition-I ? we simply supply our face image to that AWS Lambda API and get the aligned face, now we have added the face recognition model to heroku(why ? see notes), and now its simply matter of sending the aligned face to the model backend and fetching the results ! that’s it !</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>I moved the backend (Flask) to heroku, why ? because AWS has uncompressed requirement to 500MB, and i cannot use PyTorch 1.6.0 with it, something i discussed earlier in previous assignment as well</li>
+<li>Heroku provides a slug size (compressed) python app to 500MB, but even after adding all dependencies my slug size of below 250MB, quite good ain’t it !</li>
+</ul>
+<h2 id="personal-notes">Personal Notes</h2>
+<ul>
+<li>I don’t know but, for being a student developer i really like Heroku !, it gives a lot of free things without charging anything ! i can even transfer apps between accounts since every account has 5 apps limit. but a lot of flexibility ! love Heroku !</li>
+<li>AWS is good, don’t get me wrong, but too much work, also docker is necessary for lambda, else you WILL face issues, its not the case in Heroku, you simply commit and push to heroku, and rest it will take care ! simply use a build pack of whatever you like.</li>
+</ul>
+</div>
+</body>
+
+</html>

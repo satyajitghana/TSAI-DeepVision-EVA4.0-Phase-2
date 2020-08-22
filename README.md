@@ -4,6 +4,8 @@ This contains the solutions to the assignments given in The School of AI - Exten
 
 ## Website: [https://satyajitghana.github.io/TSAI-DeepVision-EVA4.0-Phase-2/](https://satyajitghana.github.io/TSAI-DeepVision-EVA4.0-Phase-2/)
 
+`[prefer using the website]`
+
 1. [Deploy to AWS](01-Deploy-To-AWS/README.md)
 
     This was the first time i deployed a DL model on AWS, it was quite an experience, i had to setup WSL to work, then PyCharm to work with my windows's anaconda, and then making sure that the WSL anaconda requirements match with windows anaconda. maaaaan why is it so difficult to share conda envs ?
@@ -22,7 +24,16 @@ This contains the solutions to the assignments given in The School of AI - Exten
 
 3. [FaceRecognition-I - Implementing Face Swap !](03-FaceRecognition-I/)
 
-    Face Recognition start by aligning your face so it looks directly to the front. Here we implemented FaceSwap by aligning the two faces and then swapping the detected face. The face was detected using the dlib's 68 point frontal face detector.
+    Face Recognition starts by aligning your face so it looks directly to the front. Here we implemented FaceSwap by aligning the two faces and then swapping the detected face. The face was detected using the dlib's 68 point frontal face detector.
 
     The Flask Backend was deployed on AWS Lambda and the React Frontend on AWS Amplify
     [https://master.d165apizgrkyke.amplifyapp.com/](https://master.d165apizgrkyke.amplifyapp.com/)
+
+4. [FaceRecognition-II - Deploying Face Recognizer Model !](04-FaceRecognition-II/index.html)
+
+    Here i finally trained a Face Recognizer model and deployed it over Heroku ! why Heroku you ask ? head over to its README. All the models are hosted on a single dyno instance now. Face Align and Swap are still hosted on Lambda.
+
+    My Amazon S3 Limits have shot up, so i don't want to risk incurring costs, Face Swap doesn't use S3 so thats ok.
+
+    The Flask Backend was moved to Heroku, as well as the Front end is now hosted on Heroku
+    [https://thetensorclan-web.herokuapp.com/](https://thetensorclan-web.herokuapp.com/)
