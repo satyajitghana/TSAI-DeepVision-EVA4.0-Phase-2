@@ -28,6 +28,9 @@ All of the TensorClan Models can be found at https://drive.google.com/drive/fold
 
 **Backend:** [https://thetensorclan-backend.herokuapp.com/](https://thetensorclan-backend.herokuapp.com/)
 
+Code for FrontEnd: [https://github.com/extensive-vision-ai/thetensorclan-web](https://github.com/extensive-vision-ai/thetensorclan-web)
+Code for BackEnd: [https://github.com/extensive-vision-ai/thetensorclan-backend-heroku](https://github.com/extensive-vision-ai/thetensorclan-backend-heroku)
+
 ## Demo
 
 ![enter image description here](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/04-FaceRecognition-II/demo2.gif?raw=true)
