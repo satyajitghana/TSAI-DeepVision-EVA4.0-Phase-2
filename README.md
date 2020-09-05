@@ -38,7 +38,7 @@ This contains the solutions to the assignments given in The School of AI - Exten
     The Flask Backend was moved to Heroku, as well as the Front end is now hosted on Heroku
     [https://thetensorclan-web.herokuapp.com/](https://thetensorclan-web.herokuapp.com/)
 
-5. [05-HumanPoseEstimation-ONNX](05-05-HumanPoseEstimation-ONNX/README.md)
+5. [HumanPoseEstimation-ONNX](05-05-HumanPoseEstimation-ONNX/README.md)
 
     Following the usual drill, here i learnt about Human Pose Estimation, and we deployed a pretrained model, and it was added to the backend and the frontend.
 
