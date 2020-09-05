@@ -239,5 +239,5 @@ def get_final_preds(config, batch_heatmaps, center, scale):
 
 ## References
 
--   https://github.com/microsoft/human-pose-estimation.pytorch
--   https://arxiv.org/pdf/1804.06208.pdf
+-   [https://github.com/microsoft/human-pose-estimation.pytorch](https://github.com/microsoft/human-pose-estimation.pytorch)
+-   [https://arxiv.org/pdf/1804.06208.pdf](https://arxiv.org/pdf/1804.06208.pdf)
