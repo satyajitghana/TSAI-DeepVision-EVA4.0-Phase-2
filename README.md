@@ -47,3 +47,9 @@ This contains the solutions to the assignments given in The School of AI - Exten
     I wrote a blog on it [https://satyajitghana.github.io/2020/08/pose-estimation-onnx.html](https://satyajitghana.github.io/2020/08/pose-estimation-onnx.html)
 
     Also deployment url: [https://thetensorclan-web.herokuapp.com/](https://thetensorclan-web.herokuapp.com/)
+
+6. [Generative Adversarial Networks](06-06-GenerativeAdversarialNetworks/README.md)
+
+    Here i learnt about GAN's and what the actual awesome stuff this is ! it allows me to train a model on a dataset and actually create a new dataset which is very similar to the source dataset !
+
+    Deployment url: [https://thetensorclan-web.herokuapp.com/red-car-gan](https://thetensorclan-web.herokuapp.com/red-car-gan)
