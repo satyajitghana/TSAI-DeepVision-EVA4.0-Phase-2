@@ -53,3 +53,11 @@ This contains the solutions to the assignments given in The School of AI - Exten
     Here i learnt about GAN's and what the actual awesome stuff this is ! it allows me to train a model on a dataset and actually create a new dataset which is very similar to the source dataset !
 
     Deployment url: [https://thetensorclan-web.herokuapp.com/red-car-gan](https://thetensorclan-web.herokuapp.com/red-car-gan)
+
+7. [Variational AutoEncoders](07-VariationalAutoEncoders/README.md)
+
+    The previous assignment was done using VAE.
+
+    Deployment url: [https://thetensorclan-web.herokuapp.com/red-car-vae](https://thetensorclan-web.herokuapp.com/red-car-vae)
+
+    Also a nice little thing i did with MNIST VAE and ONNX.JS : [https://thetensorclan-web.herokuapp.com/mnist-vae](https://thetensorclan-web.herokuapp.com/mnist-vae), this model directly runs on your browser ! and on real time !, simply draw a digit on the canvas, and the model will try to reconstruct it
