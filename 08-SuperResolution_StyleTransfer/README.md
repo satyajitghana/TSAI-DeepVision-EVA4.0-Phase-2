@@ -16,6 +16,10 @@ Low Resolution Images: [IFO 400](IFO_400)
 
 ## Deployment [http://thetensorclan-web.herokuapp.com/ifo-sr](http://thetensorclan-web.herokuapp.com/ifo-sr)
 
+## Demo
+
+![demo](demo8.gif)
+
 ## Results
 
 ![r1](assets/result_0.png)
