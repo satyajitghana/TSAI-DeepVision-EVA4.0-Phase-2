@@ -4,7 +4,7 @@ This contains the solutions to the assignments given in The School of AI - Exten
 
 ## Website: [https://satyajitghana.github.io/TSAI-DeepVision-EVA4.0-Phase-2/](https://satyajitghana.github.io/TSAI-DeepVision-EVA4.0-Phase-2/)
 
-`[prefer using the website]`
+`[prefer to use the website]`
 
 1. [Deploy to AWS](01-Deploy-To-AWS/README.md)
 
@@ -61,3 +61,10 @@ This contains the solutions to the assignments given in The School of AI - Exten
     Deployment url: [https://thetensorclan-web.herokuapp.com/red-car-vae](https://thetensorclan-web.herokuapp.com/red-car-vae)
 
     Also a nice little thing i did with MNIST VAE and ONNX.JS : [https://thetensorclan-web.herokuapp.com/mnist-vae](https://thetensorclan-web.herokuapp.com/mnist-vae), this model directly runs on your browser ! and on real time !, simply draw a digit on the canvas, and the model will try to reconstruct it
+
+8. [SuperResolution & StyleTransfer](08-SuperResolution_StyleTransfer/README.md)
+
+    The dataset used in MobileNetV2 assignment was used to create a Super Resolution model or SRGAN, the images sent to the model are upscaled by a factor
+    of 2.
+
+    Deployment url: [http://thetensorclan-web.herokuapp.com/ifo-sr](http://thetensorclan-web.herokuapp.com/ifo-sr)
