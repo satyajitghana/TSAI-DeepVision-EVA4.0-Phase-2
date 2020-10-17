@@ -68,3 +68,13 @@ This contains the solutions to the assignments given in The School of AI - Exten
     of 2.
 
     Deployment url: [http://thetensorclan-web.herokuapp.com/ifo-sr](http://thetensorclan-web.herokuapp.com/ifo-sr)
+
+9. [Neural Word Embedding](09-NeuralWordEmbedding/README.md)
+
+    This was a pretty straight forward deployemnt for a NLP Model, i learnt quite a lot of things about NLP, and how embeddings work, what's the purpose of embedding.
+
+    Also a thing to note that i wasn't able to use a traced model on the backend, so i had to use a scripted model
+
+    Spacy Model overloaded the backend, so i had to use a small model, and also always load the model inside the function, never store a copy of the model as global variable.
+
+    Deployment url: [https://thetensorclan-web.herokuapp.com/text-classifiers](https://thetensorclan-web.herokuapp.com/text-classifiers)
