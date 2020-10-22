@@ -2,9 +2,27 @@
 
 ## Assignment
 
-Train SRGAN on the drone images dataset you created. Your target is to train an SRGAN network (pre-trained models are fine) to be awesome at drone/flying object Super Resolution. Once done, upload it to your webpage - 1000pts.
+1. Train SRGAN on the drone images dataset you created. Your target is to train an SRGAN network (pre-trained models are fine) to be awesome at drone/flying object Super Resolution. Once done, upload it to your webpage - 1000pts.
 
-## Solution
+2. Add a neural style transfer page on your Webpage - 500
+
+## Resolution - Style Transfer
+
+Github: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/08-SuperResolution_StyleTransfer/FastNeuralStyleTransfer.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/08-SuperResolution_StyleTransfer/FastNeuralStyleTransfer.ipynb)
+
+Colab: [https://colab.research.google.com/github/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/08-SuperResolution_StyleTransfer/FastNeuralStyleTransfer.ipynb](https://colab.research.google.com/github/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/08-SuperResolution_StyleTransfer/FastNeuralStyleTransfer.ipynb)
+
+## Deployment: [https://thetensorclan-web.herokuapp.com/style-transfer](https://thetensorclan-web.herokuapp.com/style-transfer)
+
+### Results
+
+![style-transfer](assets/style_transfer.png)
+
+### Demo
+
+![demo](demo10.gif)
+
+## Solution - Super Resolution
 
 Github: [https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/08-SuperResolution_StyleTransfer/IFO_SuperResolution.ipynb](https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/blob/master/08-SuperResolution_StyleTransfer/IFO_SuperResolution.ipynb)
 
