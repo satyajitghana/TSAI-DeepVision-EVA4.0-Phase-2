@@ -67,7 +67,10 @@ This contains the solutions to the assignments given in The School of AI - Exten
     The dataset used in MobileNetV2 assignment was used to create a Super Resolution model or SRGAN, the images sent to the model are upscaled by a factor
     of 2.
 
-    Deployment url: [http://thetensorclan-web.herokuapp.com/ifo-sr](http://thetensorclan-web.herokuapp.com/ifo-sr)
+    Also Neural Style Transfer models were deployed, i used fast neural style transfer which are basically feed forward network that are pretrained to apply a specific style to a image.
+
+    ST Deployment url: [https://thetensorclan-web.herokuapp.com/style-transfer](https://thetensorclan-web.herokuapp.com/style-transfer)
+    SR Deployment url: [http://thetensorclan-web.herokuapp.com/ifo-sr](http://thetensorclan-web.herokuapp.com/ifo-sr)
 
 9. [Neural Word Embedding](09-NeuralWordEmbedding/README.md)
 

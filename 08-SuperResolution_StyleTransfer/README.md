@@ -14,11 +14,11 @@ Colab: [https://colab.research.google.com/github/satyajitghana/TSAI-DeepVision-E
 
 ## Deployment: [https://thetensorclan-web.herokuapp.com/style-transfer](https://thetensorclan-web.herokuapp.com/style-transfer)
 
-### Results
+### ST Results
 
 ![style-transfer](assets/style_transfer.png)
 
-### Demo
+### ST Demo
 
 ![demo](demo10.gif)
 
@@ -34,11 +34,11 @@ Low Resolution Images: [IFO 400](IFO_400)
 
 ## Deployment [http://thetensorclan-web.herokuapp.com/ifo-sr](http://thetensorclan-web.herokuapp.com/ifo-sr)
 
-## Demo
+## SR Demo
 
 ![demo](demo8.gif)
 
-## Results
+## SR Results
 
 ![r1](assets/result_0.png)
 
