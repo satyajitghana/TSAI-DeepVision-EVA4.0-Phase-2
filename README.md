@@ -83,7 +83,7 @@ This contains the solutions to the assignments given in The School of AI - Exten
 
     Deployment url: [https://thetensorclan-web.herokuapp.com/text-classifiers](https://thetensorclan-web.herokuapp.com/text-classifiers)
 
-10. [Attention & Transformers](11-11-Attention&Transformers/README.md)
+10. [Attention & Transformers](11-Attention&Transformers/README.md)
 
     NLP is vastly affected by transformers ! even the huge GPT-3 uses transformer, this assignment was the very basics, where we created a simple German to English Translator using Attention and Transformers.
 
