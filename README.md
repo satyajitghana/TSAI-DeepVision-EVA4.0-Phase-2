@@ -92,3 +92,9 @@ This contains the solutions to the assignments given in The School of AI - Exten
 12. [Image Captioning](12-ImageCaptioning/README.md)
 
     Deployment url: [https://thetensorclan-web.herokuapp.com/image-captioning](https://thetensorclan-web.herokuapp.com/image-captioning)
+
+13. [AI for Sound](13-AI4Sound/README.md)
+
+    This was a really amazing session, basically previous session was converting Images to Text, and this session was to convert Sound to Text, which is a really difficult task, is what i understood, in this session we used librispeech dataset to create a small ~92MB model that can do speech recognition, i.e. convert some small words to text, doesn't work well, but meh, for such a small model for sound, it works kinda good.
+
+    Deployment url: [https://thetensorclan-web.herokuapp.com/speech-to-text](https://thetensorclan-web.herokuapp.com/speech-to-text)
