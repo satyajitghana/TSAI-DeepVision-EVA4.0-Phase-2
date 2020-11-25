@@ -23,6 +23,15 @@ Inferencing Colab: [https://colab.research.google.com/github/satyajitghana/TSAI-
 
 ## Deployment: [https://thetensorclan-web.herokuapp.com/speech-to-text](https://thetensorclan-web.herokuapp.com/speech-to-text)
 
+So this deployment took a lot of work
+
+- used soundfile to load the sound from the bytes recevied in flask
+- react-media-recorder was used to record the audio as a WebM file and this was sent to the backend
+- WebM cannot be used by soundfile, hence WebM was converted to Wav using ffmpeg
+- soundfile needs additional installation which was done using Aptfile [https://github.com/heroku/heroku-buildpack-apt#aptfile](https://github.com/heroku/heroku-buildpack-apt#aptfile)
+- ffmpeg is huge if you use sudo apt install, or add it in the Aptfile for heroku, so i used [https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) which really reduced the total size, right now my total backend build, compressed is about 380MB which is pretty okay
+- build packs are amazing !
+
 ## Demo
 
 ![demo](demo13.gif)
