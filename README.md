@@ -83,6 +83,10 @@ This contains the solutions to the assignments given in The School of AI - Exten
 
     Deployment url: [https://thetensorclan-web.herokuapp.com/text-classifiers](https://thetensorclan-web.herokuapp.com/text-classifiers)
 
+10. [Sequence Models](10-SequenceModels/EVA_P2S3.ipynb)
+
+    Built an LSTM from scrath with numpy
+
 11. [Attention & Transformers](11-Attention&Transformers/README.md)
 
     NLP is vastly affected by transformers ! even the huge GPT-3 uses transformer, this assignment was the very basics, where we created a simple German to English Translator using Attention and Transformers.
@@ -98,3 +102,9 @@ This contains the solutions to the assignments given in The School of AI - Exten
     This was a really amazing session, basically previous session was converting Images to Text, and this session was to convert Sound to Text, which is a really difficult task, is what i understood, in this session we used librispeech dataset to create a small ~92MB model that can do speech recognition, i.e. convert some small words to text, doesn't work well, but meh, for such a small model for sound, it works kinda good.
 
     Deployment url: [https://thetensorclan-web.herokuapp.com/speech-to-text](https://thetensorclan-web.herokuapp.com/speech-to-text)
+
+14. [AWS-EC2-Flask Deployment]
+
+    In this assignment, all of the previous deployments was done at once in an EC2 Instance (t2.micro)
+
+    [https://github.com/extensive-vision-ai/tensorclan-ec2](https://github.com/extensive-vision-ai/tensorclan-ec2)
