@@ -108,3 +108,15 @@ This contains the solutions to the assignments given in The School of AI - Exten
     In this assignment, all of the previous deployments was done at once in an EC2 Instance (t2.micro)
 
     [https://github.com/extensive-vision-ai/tensorclan-ec2](https://github.com/extensive-vision-ai/tensorclan-ec2)
+
+15. [Capstone Project](15-Capstone/README.md)
+
+    The task was to create like a <lobe.ai> clone, which is basically a image classifier toolkit, but we needed to built a fully web version of it, and training of models should be in lambda.
+
+    This was probably the most difficult to setup in all of the deployment task, planning, architecture design, implementation, web development, backend development, message queues, task processing, containerization, model training, and much much more !
+
+    After a lot of failed attempts and failed architecures, i was able to finish it 😁
+
+    Github: <https://github.com/ProjektTejas>
+    Website: <https://tejas.tensorclan.tech/>
+    Documentation (Must Read): <https://projekt-tejas-docs.vercel.app/>
