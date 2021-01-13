@@ -1,6 +1,14 @@
-# TSAI-DeepVision-EVA4.0-Phase-2
+<h1 align="center">TSAI-DeepVision-EVA4.0-Phase-2</h1>
+
+---
+
+<div align="center">
+<img src="logo.png" >
+</div>
 
 This contains the solutions to the assignments given in The School of AI - Extensive Vision AI 4.0 EVA4 Phase2
+
+---
 
 ## Website: [https://satyajitghana.github.io/TSAI-DeepVision-EVA4.0-Phase-2/](https://satyajitghana.github.io/TSAI-DeepVision-EVA4.0-Phase-2/)
 
