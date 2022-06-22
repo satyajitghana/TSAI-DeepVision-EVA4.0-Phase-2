@@ -15,7 +15,7 @@ MarkupSafe==1.1.1
 mkl-fft==1.1.0
 mkl-random==1.1.1
 mkl-service==2.3.0
-numpy==1.18.5
+numpy==1.22.0
 olefile==0.46
 Pillow @ file:///tmp/build/80754af9/pillow_1594307295532/work
 pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
