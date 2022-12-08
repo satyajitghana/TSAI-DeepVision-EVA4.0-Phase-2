@@ -1,7 +1,7 @@
 boto3==1.9.66
 botocore==1.12.189
 brotlipy==0.7.0
-certifi==2020.6.20
+certifi==2022.12.7
 cffi @ file:///tmp/build/80754af9/cffi_1596809855670/work
 click==7.1.2
 cryptography==2.9.2
