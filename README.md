@@ -14,6 +14,8 @@ This contains the solutions to the assignments given in The School of AI - Exten
 
 `[prefer to use the website]`
 
+NOTE: most of the links have stopped working as heroku stopped free services, here's a backup site: [https://master.d165apizgrkyke.amplifyapp.com/](https://master.d165apizgrkyke.amplifyapp.com/)
+
 1. [Deploy to AWS](01-Deploy-To-AWS/README.md)
 
     This was the first time i deployed a DL model on AWS, it was quite an experience, i had to setup WSL to work, then PyCharm to work with my windows's anaconda, and then making sure that the WSL anaconda requirements match with windows anaconda. maaaaan why is it so difficult to share conda envs ?
